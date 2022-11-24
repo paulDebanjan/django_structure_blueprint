@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="text-center mt-2">
+        <button type="submit" class="btn btn-primary col-12">Log in</button>
+    </div>
+    <div class="mt-5">
+    </div>
+</form>

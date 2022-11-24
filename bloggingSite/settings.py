@@ -39,12 +39,17 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+]
 LOCAL_APPS = [
     'bloggingSite.authentication',
     'bloggingSite.administration',
     'bloggingSite.registration',
+    'bloggingSite.user',
+    'bloggingSite.social_media',
 ]
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
