@@ -1,17 +1,23 @@
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import views as auth_view
 from django.urls import path
+from .views import userSignUpView
 
 app_name = "authentication"
 urlpatterns=[
     path(
+        route='signup/',
+        view=userSignUpView.as_view(),
+        name='signup'
+    ),
+    path(
         route='login/',
-        view=auth_view.LoginView.as_view(template_name='authentication/form.html'),
+        view=auth_view.LoginView.as_view(template_name='authentication/form.html', success_url="decision"),
         name='login'
     ),
     path(
         route='logout/',
-        view=auth_view.LogoutView.as_view(template_name='index.html'),
+        view=auth_view.LogoutView.as_view(),
         name='logout'
     ),
     path(

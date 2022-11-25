@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .forms import UserSignUpForm
+from django.views.generic import CreateView
+from django.contrib.auth import login
 from .models import User
 
 
@@ -9,11 +11,11 @@ class userSignUpView(CreateView):
     template_name = 'authentication/form.html'
 
     def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'student'
+        kwargs['user_type'] = 'user'
         return super().get_context_data(**kwargs)
 
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
+        return redirect('decision')
 

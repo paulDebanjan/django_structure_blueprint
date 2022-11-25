@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def newsFeedView(request):
+    return render(request,"user/news_feed.html")

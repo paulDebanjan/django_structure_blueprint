@@ -15,7 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 APP_DIR = BASE_DIR/"bloggingSite"
-
+LOGIN_REDIRECT_URL = 'decision'
+LOGOUT_REDIRECT_URL = 'decision'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -43,9 +44,9 @@ THIRD_PARTY_APPS = [
     'crispy_forms',
 ]
 LOCAL_APPS = [
+    'bloggingSite.newsFeed',
     'bloggingSite.authentication',
     'bloggingSite.administration',
-    'bloggingSite.registration',
     'bloggingSite.user',
     'bloggingSite.social_media',
 ]

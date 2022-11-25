@@ -24,6 +24,9 @@ from .views import decision
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',decision, name="decision"),
+    path("user/",include("bloggingSite.user.urls")),
+    path("newsFeed/",include("bloggingSite.newsFeed.urls")),
+    path("administration/",include("bloggingSite.administration.urls")),
     path("accounts/",include("bloggingSite.authentication.urls")),
     path('password-reset-confirm/<uidb64>/<token>/',auth_view.PasswordResetConfirmView.as_view(template_name='authentication/password_reset_confirm.html'),name='password_reset_confirm'),
     path('password-reset-complete/',auth_view.PasswordResetCompleteView.as_view(template_name='authentication/password_reset_complete.html'),name='password_reset_complete'),

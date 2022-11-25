@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class RegistrationConfig(AppConfig):
+class NewsfeedConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'bloggingSite.registration'
+    name = 'bloggingSite.newsFeed'
