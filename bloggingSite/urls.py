@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib.auth import views as auth_view
 from django.conf.urls.static import static
-from django.urls import path, include
+from django.urls import path, include,re_path
+from django.views.static import serve
 from django.contrib import admin
 from django.conf import settings
 
@@ -30,6 +31,9 @@ urlpatterns = [
     path("accounts/",include("bloggingSite.authentication.urls")),
     path('password-reset-confirm/<uidb64>/<token>/',auth_view.PasswordResetConfirmView.as_view(template_name='authentication/password_reset_confirm.html'),name='password_reset_confirm'),
     path('password-reset-complete/',auth_view.PasswordResetCompleteView.as_view(template_name='authentication/password_reset_complete.html'),name='password_reset_complete'),
+    #Debug Fase Mode
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 # handler500 = error500.as_view()
 # For Media

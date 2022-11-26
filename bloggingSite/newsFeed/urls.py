@@ -4,7 +4,7 @@ from .views import CreateNewsFeedView
 app_name = "newsFeed"
 urlpatterns = [
     path(
-        route='create',
+        route='create/',
         view=CreateNewsFeedView,
         name='create'
     ),

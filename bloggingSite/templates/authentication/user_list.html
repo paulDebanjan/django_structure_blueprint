@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title%}<title>User List</title>{% endblock title %}
+{% block stylesheet %}
+{% endblock stylesheet %}
+{% block content %}
+<div class="container">
+    <div class="user_info">
+        <h1>User List</h1>
+        <table style="border-collapse: collapse;" border="1">
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Entry Date</th>
+                <th>Last Active</th>
+            </tr>
+            {% for user in user_list %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name|capfirst}} {{user.last_name|capfirst}}</td>
+                <td>{{user.date_joined  }}</td>
+                <td>{{user.last_login}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+</div>
+
+
+{% endblock content %}
