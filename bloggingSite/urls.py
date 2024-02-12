@@ -20,11 +20,12 @@ from django.views.static import serve
 from django.contrib import admin
 from django.conf import settings
 
-from .views import decision
+from .views import decision,document_print
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',decision, name="decision"),
+    path('doc',name="document",view=document_print),
     path("user/",include("bloggingSite.user.urls")),
     path("newsFeed/",include("bloggingSite.newsFeed.urls")),
     path("administration/",include("bloggingSite.administration.urls")),

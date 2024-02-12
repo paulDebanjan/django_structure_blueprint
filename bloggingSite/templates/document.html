@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Document{% endblock title %}
+{% block content %}
+<div style="text-align: center;">
+    <h1>Document</h1>
+    <a href="{% static 'document/output.pdf' %}"><button>Print</button></a>
+
+</div>
+
+{% endblock content %}
